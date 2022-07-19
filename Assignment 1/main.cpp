@@ -160,6 +160,21 @@ int main(int argc, int* argv[])
 			{
 				window.close();
 			}
+
+			if (event.type == sf::Event::KeyPressed)
+			{
+				if (event.key.code == sf::Keyboard::A)
+				{
+					for (auto& i : circles)
+					{
+						i.setSpeed(-i.getSpeed());
+					}
+					for (auto& i : rects)
+					{
+						i.setSpeed(-i.getSpeed());
+					}
+				}
+			}
 		}
 
 		draw(window, circles, rects);
